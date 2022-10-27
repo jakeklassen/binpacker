@@ -179,19 +179,11 @@ const tests = [
 
 describe('binpacker - 3d', () => {
   describe('Packer', () => {
-    test.each(tests)('%s', (fixture) => {
-      const packer = new Packer(fixture.bins, fixture.items);
+    test.each(tests)('%s', ({ bins, items, expectation }) => {
+      const packer = new Packer(bins, items);
       packer.pack();
 
-      expect(fixture.expectation(packer)).toBe(true);
+      expect(expectation(packer)).toBe(true);
     });
-
-    // tests.forEach((test) => {
-    //   it(test.name, () => {
-    //     const packer = new Packer(test.bins, test.items);
-    //     packer.pack();
-    //     expect(test.expectation(packer)).toBeTruthy();
-    //   });
-    // });
   });
 });
