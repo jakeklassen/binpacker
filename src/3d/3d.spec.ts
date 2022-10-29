@@ -1,4 +1,4 @@
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test } from '@jest/globals';
 import { Bin } from './bin.js';
 import { Item } from './item.js';
 import { Packer } from './packer.js';
@@ -170,16 +170,12 @@ const tests = [
       );
     },
   },
-].map((fixture) => ({
-  ...fixture,
-  toString() {
-    return this.name;
-  },
-}));
+];
 
 describe('binpacker - 3d', () => {
   describe('Packer', () => {
-    test.each(tests)('%s', ({ bins, items, expectation }) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    test.each(tests)('$name', ({ name, bins, items, expectation }) => {
       const packer = new Packer(bins, items);
       packer.pack();
 

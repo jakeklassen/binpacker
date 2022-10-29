@@ -1,3 +1,22 @@
 {
+  "editor.inlayHints.enabled": "on",
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.parameterNames.enabled": "all",
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": false,
+
+  "testExplorer.codeLens": true,
+  "testExplorer.useNativeTesting": false,
+
+  "vitest.enable": false,
+
+  "mochaExplorer.autoload": true,
+  "mochaExplorer.esmLoader": true,
+  "mochaExplorer.files": "src/**/*.spec.ts",
+  "mochaExplorer.nodeArgv": [
+    "--loader=tsm",
+    "--no-warnings=ExperimentalWarning",
+    "--experimental-specifier-resolution=node"
+  ],
   "typescript.preferences.importModuleSpecifierEnding": "js"
 }
